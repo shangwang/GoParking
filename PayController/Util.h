@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 
 @interface Util : NSObject
+
++ (void)drawButtonGreen;
+
++ (UIImage*)imageOfButtonGreen;
+
++ (UIImage*)scaleImage:(UIImage *)image toSize:(CGSize)size;
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "DEMOAppDelegate.h"
-
+#import "Pingpp.h"
+#import "LogInViewController.h"
 @implementation DEMOAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -22,10 +23,8 @@
     // Add the navigation controller's view to the window and display.
     [self.window addSubview:navigationController.view];
     [self.window makeKeyAndVisible];
-    return YES;
-    
-    
     // Override point for customization after application launch.
+    
     return YES;
 }
 							
@@ -54,6 +53,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
+        NSLog(@"result = %@, error : %@", result, error == nil ? @"nil" : [error getMsg]);
+    }];
+    return YES;
 }
 
 @end

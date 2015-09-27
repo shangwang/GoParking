@@ -14,12 +14,12 @@
 		3032B89F1805A10100064F85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B89E1805A10100064F85 /* main.m */; };
 		3032B8A31805A10100064F85 /* DEMOAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8A21805A10100064F85 /* DEMOAppDelegate.mm */; };
 		3032B8A61805A10100064F85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3032B8A41805A10100064F85 /* Main.storyboard */; };
-		3032B8A91805A10100064F85 /* DEMORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8A81805A10100064F85 /* DEMORootViewController.m */; };
+		3032B8A91805A10100064F85 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8A81805A10100064F85 /* RootViewController.m */; };
 		3032B8AB1805A10100064F85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3032B8AA1805A10100064F85 /* Images.xcassets */; };
-		3032B8CE1805A1BC00064F85 /* DEMOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8CD1805A1BC00064F85 /* DEMOHomeViewController.m */; };
-		3032B8D11805A1D200064F85 /* DEMOMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8D01805A1D200064F85 /* DEMOMenuViewController.m */; };
-		3032B8E71805A26500064F85 /* DEMONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8E61805A26500064F85 /* DEMONavigationController.m */; };
-		3032B8EA1805A4BF00064F85 /* DEMOSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8E91805A4BF00064F85 /* DEMOSecondViewController.m */; };
+		3032B8CE1805A1BC00064F85 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8CD1805A1BC00064F85 /* HomeViewController.m */; };
+		3032B8D11805A1D200064F85 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8D01805A1D200064F85 /* MenuViewController.m */; };
+		3032B8E71805A26500064F85 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8E61805A26500064F85 /* NavigationController.m */; };
+		3032B8EA1805A4BF00064F85 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8E91805A4BF00064F85 /* SecondViewController.m */; };
 		3032B8FD1805AB5600064F85 /* avatar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3032B8FC1805AB5600064F85 /* avatar@2x.jpg */; };
 		309F5CD61817201B00502935 /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309F5CD41817201B00502935 /* Main-iPad.storyboard */; };
 		5606C7F91BA4BEF4002F33D5 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5606C7EE1BA4BEF4002F33D5 /* RECommonFunctions.m */; };
@@ -28,15 +28,42 @@
 		5606C7FC1BA4BEF4002F33D5 /* UIImage+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5606C7F41BA4BEF4002F33D5 /* UIImage+REFrostedViewController.m */; };
 		5606C7FD1BA4BEF4002F33D5 /* UIView+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5606C7F61BA4BEF4002F33D5 /* UIView+REFrostedViewController.m */; };
 		5606C7FE1BA4BEF4002F33D5 /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5606C7F81BA4BEF4002F33D5 /* UIViewController+REFrostedViewController.m */; };
-		5606C8001BA4BF8C002F33D5 /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5606C7FF1BA4BF8C002F33D5 /* BaiduMapAPI.framework */; };
 		5606C8021BA4BFCE002F33D5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5606C8011BA4BFCE002F33D5 /* CoreLocation.framework */; };
 		5606C8041BA4BFD6002F33D5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5606C8031BA4BFD6002F33D5 /* OpenGLES.framework */; };
 		5606C8061BA4BFDD002F33D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5606C8051BA4BFDD002F33D5 /* Security.framework */; };
 		5606C8081BA4BFE9002F33D5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5606C8071BA4BFE9002F33D5 /* SystemConfiguration.framework */; };
 		5606C80A1BA4C00C002F33D5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5606C8091BA4C00C002F33D5 /* MessageUI.framework */; };
-		5606C80D1BA4C06B002F33D5 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5606C80B1BA4C04E002F33D5 /* mapapi.bundle */; };
+		569389781BB6291300460B27 /* Shang.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 569389771BB6291300460B27 /* Shang.jpg */; };
+		5693897C1BB6650100460B27 /* CarServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5693897A1BB6650100460B27 /* CarServiceViewController.m */; };
+		5693897D1BB6650100460B27 /* CarServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5693897B1BB6650100460B27 /* CarServiceViewController.xib */; };
+		569389801BB6710000460B27 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5693897F1BB6710000460B27 /* LogInViewController.swift */; };
+		569389841BB6725000460B27 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569389821BB6725000460B27 /* LogInViewController.m */; };
+		569389851BB6725000460B27 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569389831BB6725000460B27 /* LogInViewController.xib */; };
+		569389871BB6731400460B27 /* img1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 569389861BB6731400460B27 /* img1.jpg */; };
+		5693898B1BB88A1600460B27 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5693898A1BB88A1600460B27 /* KeychainWrapper.m */; };
 		56B9CA5E1BAA919D00C03832 /* bg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56B9CA5D1BAA919D00C03832 /* bg2.jpg */; };
 		56B9CA601BAA91A400C03832 /* bg_Bk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56B9CA5F1BAA91A400C03832 /* bg_Bk.jpg */; };
+		56B9CA651BACBFFD00C03832 /* libpingpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA631BACBFFD00C03832 /* libpingpp.a */; };
+		56B9CA661BACBFFD00C03832 /* Pingpp.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA641BACBFFD00C03832 /* Pingpp.bundle */; };
+		56B9CA6B1BACC00D00C03832 /* AlipaySDK.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA671BACC00C00C03832 /* AlipaySDK.bundle */; };
+		56B9CA6C1BACC00D00C03832 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA681BACC00C00C03832 /* AlipaySDK.framework */; };
+		56B9CA6D1BACC00D00C03832 /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA691BACC00C00C03832 /* libUPPayPlugin.a */; };
+		56B9CA6E1BACC00D00C03832 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA6A1BACC00C00C03832 /* libWeChatSDK.a */; };
+		56B9CA701BACC01800C03832 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA6F1BACC01800C03832 /* CFNetwork.framework */; };
+		56B9CA721BACC02400C03832 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA711BACC02400C03832 /* libc++.dylib */; };
+		56B9CA741BACC02C00C03832 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA731BACC02C00C03832 /* libz.dylib */; };
+		56B9CA761BACC03500C03832 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA751BACC03500C03832 /* libsqlite3.0.dylib */; };
+		56B9CA781BACC09D00C03832 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 56B9CA771BACC09D00C03832 /* mapapi.bundle */; };
+		56B9CA7A1BACC0B800C03832 /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9CA791BACC0B800C03832 /* BaiduMapAPI.framework */; };
+		56B9CA7C1BACC19100C03832 /* Pingpp.h in Sources */ = {isa = PBXBuildFile; fileRef = 56B9CA7B1BACC19100C03832 /* Pingpp.h */; };
+		56B9CA811BACC38700C03832 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B9CA801BACC38700C03832 /* Util.m */; };
+		56B9CA931BAD154100C03832 /* item1.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B9CA901BAD154100C03832 /* item1.png */; };
+		56B9CA941BAD154100C03832 /* item2.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B9CA911BAD154100C03832 /* item2.png */; };
+		56B9CA951BAD154100C03832 /* item3.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B9CA921BAD154100C03832 /* item3.png */; };
+		56B9CA991BAD17F600C03832 /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B9CA971BAD17F600C03832 /* PayViewController.m */; };
+		56B9CA9A1BAD17F600C03832 /* PayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B9CA981BAD17F600C03832 /* PayViewController.xib */; };
+		56B9CA9B1BAD1C2300C03832 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 56B9CA671BACC00C00C03832 /* AlipaySDK.bundle */; };
+		56B9CAA01BAD22BE00C03832 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B9CA9F1BAD22BE00C03832 /* home.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,21 +78,20 @@
 		3032B8A11805A10100064F85 /* DEMOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEMOAppDelegate.h; sourceTree = "<group>"; };
 		3032B8A21805A10100064F85 /* DEMOAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DEMOAppDelegate.mm; sourceTree = "<group>"; };
 		3032B8A51805A10100064F85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3032B8A71805A10100064F85 /* DEMORootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEMORootViewController.h; sourceTree = "<group>"; };
-		3032B8A81805A10100064F85 /* DEMORootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DEMORootViewController.m; sourceTree = "<group>"; };
+		3032B8A71805A10100064F85 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		3032B8A81805A10100064F85 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		3032B8AA1805A10100064F85 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3032B8B11805A10100064F85 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3032B8B91805A10100064F85 /* REFrostedViewControllerStoryboardsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "REFrostedViewControllerStoryboardsTests-Info.plist"; sourceTree = "<group>"; };
 		3032B8BB1805A10100064F85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3032B8BD1805A10100064F85 /* REFrostedViewControllerStoryboardsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewControllerStoryboardsTests.m; sourceTree = "<group>"; };
-		3032B8CC1805A1BC00064F85 /* DEMOHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOHomeViewController.h; sourceTree = "<group>"; };
-		3032B8CD1805A1BC00064F85 /* DEMOHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOHomeViewController.m; sourceTree = "<group>"; };
-		3032B8CF1805A1D200064F85 /* DEMOMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOMenuViewController.h; sourceTree = "<group>"; };
-		3032B8D01805A1D200064F85 /* DEMOMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOMenuViewController.m; sourceTree = "<group>"; };
-		3032B8E51805A26500064F85 /* DEMONavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMONavigationController.h; sourceTree = "<group>"; };
-		3032B8E61805A26500064F85 /* DEMONavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMONavigationController.m; sourceTree = "<group>"; };
-		3032B8E81805A4BF00064F85 /* DEMOSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOSecondViewController.h; sourceTree = "<group>"; };
-		3032B8E91805A4BF00064F85 /* DEMOSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOSecondViewController.m; sourceTree = "<group>"; };
+		3032B8CC1805A1BC00064F85 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		3032B8CD1805A1BC00064F85 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		3032B8CF1805A1D200064F85 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		3032B8D01805A1D200064F85 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		3032B8E51805A26500064F85 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		3032B8E61805A26500064F85 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		3032B8E81805A4BF00064F85 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		3032B8E91805A4BF00064F85 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		3032B8FC1805AB5600064F85 /* avatar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "avatar@2x.jpg"; sourceTree = "<group>"; };
 		309F5CD51817201B00502935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main-iPad.storyboard"; sourceTree = "<group>"; };
 		5606C7ED1BA4BEF4002F33D5 /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RECommonFunctions.h; path = REFrostedViewController/RECommonFunctions.h; sourceTree = SOURCE_ROOT; };
@@ -80,15 +106,47 @@
 		5606C7F61BA4BEF4002F33D5 /* UIView+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+REFrostedViewController.m"; path = "REFrostedViewController/UIView+REFrostedViewController.m"; sourceTree = SOURCE_ROOT; };
 		5606C7F71BA4BEF4002F33D5 /* UIViewController+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+REFrostedViewController.h"; path = "REFrostedViewController/UIViewController+REFrostedViewController.h"; sourceTree = SOURCE_ROOT; };
 		5606C7F81BA4BEF4002F33D5 /* UIViewController+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+REFrostedViewController.m"; path = "REFrostedViewController/UIViewController+REFrostedViewController.m"; sourceTree = SOURCE_ROOT; };
-		5606C7FF1BA4BF8C002F33D5 /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI.framework; sourceTree = "<group>"; };
 		5606C8011BA4BFCE002F33D5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5606C8031BA4BFD6002F33D5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		5606C8051BA4BFDD002F33D5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5606C8071BA4BFE9002F33D5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5606C8091BA4C00C002F33D5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		5606C80B1BA4C04E002F33D5 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = BaiduMapAPI.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
+		569389771BB6291300460B27 /* Shang.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shang.jpg; sourceTree = "<group>"; };
+		569389791BB6650100460B27 /* CarServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarServiceViewController.h; sourceTree = "<group>"; };
+		5693897A1BB6650100460B27 /* CarServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarServiceViewController.m; sourceTree = "<group>"; };
+		5693897B1BB6650100460B27 /* CarServiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarServiceViewController.xib; sourceTree = "<group>"; };
+		5693897E1BB670FF00460B27 /* REFrostedViewControllerStoryboards-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "REFrostedViewControllerStoryboards-Bridging-Header.h"; sourceTree = "<group>"; };
+		5693897F1BB6710000460B27 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		569389811BB6725000460B27 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		569389821BB6725000460B27 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		569389831BB6725000460B27 /* LogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
+		569389861BB6731400460B27 /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img1.jpg; sourceTree = "<group>"; };
+		569389891BB88A1600460B27 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		5693898A1BB88A1600460B27 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		56B9CA5D1BAA919D00C03832 /* bg2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg2.jpg; sourceTree = "<group>"; };
 		56B9CA5F1BAA91A400C03832 /* bg_Bk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_Bk.jpg; sourceTree = "<group>"; };
+		56B9CA631BACBFFD00C03832 /* libpingpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpingpp.a; path = lib/libpingpp.a; sourceTree = "<group>"; };
+		56B9CA641BACBFFD00C03832 /* Pingpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Pingpp.bundle; path = lib/Pingpp.bundle; sourceTree = "<group>"; };
+		56B9CA671BACC00C00C03832 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AlipaySDK.bundle; path = lib/Channels/AlipaySDK.bundle; sourceTree = "<group>"; };
+		56B9CA681BACC00C00C03832 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = lib/Channels/AlipaySDK.framework; sourceTree = "<group>"; };
+		56B9CA691BACC00C00C03832 /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUPPayPlugin.a; path = lib/Channels/libUPPayPlugin.a; sourceTree = "<group>"; };
+		56B9CA6A1BACC00C00C03832 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = lib/Channels/libWeChatSDK.a; sourceTree = "<group>"; };
+		56B9CA6F1BACC01800C03832 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		56B9CA711BACC02400C03832 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		56B9CA731BACC02C00C03832 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		56B9CA751BACC03500C03832 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		56B9CA771BACC09D00C03832 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = lib/BaiduMapAPI.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
+		56B9CA791BACC0B800C03832 /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI.framework; path = lib/BaiduMapAPI.framework; sourceTree = "<group>"; };
+		56B9CA7B1BACC19100C03832 /* Pingpp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Pingpp.h; path = lib/Pingpp.h; sourceTree = "<group>"; };
+		56B9CA7F1BACC38700C03832 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = PayController/Util.h; sourceTree = "<group>"; };
+		56B9CA801BACC38700C03832 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Util.m; path = PayController/Util.m; sourceTree = "<group>"; };
+		56B9CA901BAD154100C03832 /* item1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item1.png; sourceTree = "<group>"; };
+		56B9CA911BAD154100C03832 /* item2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item2.png; sourceTree = "<group>"; };
+		56B9CA921BAD154100C03832 /* item3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item3.png; sourceTree = "<group>"; };
+		56B9CA961BAD17F600C03832 /* PayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayViewController.h; path = PayController/PayViewController.h; sourceTree = "<group>"; };
+		56B9CA971BAD17F600C03832 /* PayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PayViewController.m; path = PayController/PayViewController.m; sourceTree = "<group>"; };
+		56B9CA981BAD17F600C03832 /* PayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PayViewController.xib; path = PayController/PayViewController.xib; sourceTree = "<group>"; };
+		56B9CA9F1BAD22BE00C03832 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,13 +154,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B9CA7A1BACC0B800C03832 /* BaiduMapAPI.framework in Frameworks */,
+				56B9CA761BACC03500C03832 /* libsqlite3.0.dylib in Frameworks */,
+				56B9CA741BACC02C00C03832 /* libz.dylib in Frameworks */,
+				56B9CA721BACC02400C03832 /* libc++.dylib in Frameworks */,
+				56B9CA701BACC01800C03832 /* CFNetwork.framework in Frameworks */,
+				56B9CA6B1BACC00D00C03832 /* AlipaySDK.bundle in Frameworks */,
+				56B9CA6C1BACC00D00C03832 /* AlipaySDK.framework in Frameworks */,
+				56B9CA6D1BACC00D00C03832 /* libUPPayPlugin.a in Frameworks */,
+				56B9CA6E1BACC00D00C03832 /* libWeChatSDK.a in Frameworks */,
+				56B9CA651BACBFFD00C03832 /* libpingpp.a in Frameworks */,
+				56B9CA661BACBFFD00C03832 /* Pingpp.bundle in Frameworks */,
 				5606C80A1BA4C00C002F33D5 /* MessageUI.framework in Frameworks */,
 				3032B8971805A10100064F85 /* UIKit.framework in Frameworks */,
 				5606C8081BA4BFE9002F33D5 /* SystemConfiguration.framework in Frameworks */,
 				5606C8061BA4BFDD002F33D5 /* Security.framework in Frameworks */,
 				5606C8041BA4BFD6002F33D5 /* OpenGLES.framework in Frameworks */,
 				5606C8021BA4BFCE002F33D5 /* CoreLocation.framework in Frameworks */,
-				5606C8001BA4BF8C002F33D5 /* BaiduMapAPI.framework in Frameworks */,
 				3032B8951805A10100064F85 /* CoreGraphics.framework in Frameworks */,
 				3032B8931805A10100064F85 /* Foundation.framework in Frameworks */,
 			);
@@ -114,8 +182,10 @@
 		3032B8861805A10100064F85 = {
 			isa = PBXGroup;
 			children = (
+				569389881BB889F100460B27 /* External Libraries */,
+				56B9CA7E1BACC20800C03832 /* PayController */,
+				56B9CA7D1BACC1DC00C03832 /* SDKS */,
 				56B9CA5C1BAA918C00C03832 /* Images */,
-				5606C80B1BA4C04E002F33D5 /* mapapi.bundle */,
 				3032B8D51805A21600064F85 /* REFrostedViewController */,
 				3032B8981805A10100064F85 /* REFrostedViewControllerStoryboards */,
 				3032B8B71805A10100064F85 /* REFrostedViewControllerStoryboardsTests */,
@@ -135,16 +205,20 @@
 		3032B8911805A10100064F85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56B9CA791BACC0B800C03832 /* BaiduMapAPI.framework */,
+				56B9CA751BACC03500C03832 /* libsqlite3.0.dylib */,
+				56B9CA731BACC02C00C03832 /* libz.dylib */,
+				56B9CA711BACC02400C03832 /* libc++.dylib */,
+				56B9CA6F1BACC01800C03832 /* CFNetwork.framework */,
+				56B9CA641BACBFFD00C03832 /* Pingpp.bundle */,
 				5606C8091BA4C00C002F33D5 /* MessageUI.framework */,
 				5606C8071BA4BFE9002F33D5 /* SystemConfiguration.framework */,
 				5606C8051BA4BFDD002F33D5 /* Security.framework */,
 				5606C8031BA4BFD6002F33D5 /* OpenGLES.framework */,
 				5606C8011BA4BFCE002F33D5 /* CoreLocation.framework */,
-				5606C7FF1BA4BF8C002F33D5 /* BaiduMapAPI.framework */,
 				3032B8921805A10100064F85 /* Foundation.framework */,
 				3032B8941805A10100064F85 /* CoreGraphics.framework */,
 				3032B8961805A10100064F85 /* UIKit.framework */,
-				3032B8B11805A10100064F85 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -216,24 +290,41 @@
 		3032B8FB1805AB4600064F85 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				569389811BB6725000460B27 /* LogInViewController.h */,
+				569389821BB6725000460B27 /* LogInViewController.m */,
+				569389831BB6725000460B27 /* LogInViewController.xib */,
+				5693897F1BB6710000460B27 /* LogInViewController.swift */,
 				56B9CA561BAA8E2E00C03832 /* MenuControllers */,
+				569389791BB6650100460B27 /* CarServiceViewController.h */,
+				5693897A1BB6650100460B27 /* CarServiceViewController.m */,
+				5693897B1BB6650100460B27 /* CarServiceViewController.xib */,
+				5693897E1BB670FF00460B27 /* REFrostedViewControllerStoryboards-Bridging-Header.h */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		569389881BB889F100460B27 /* External Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				569389891BB88A1600460B27 /* KeychainWrapper.h */,
+				5693898A1BB88A1600460B27 /* KeychainWrapper.m */,
+			);
+			name = "External Libraries";
 			sourceTree = "<group>";
 		};
 		56B9CA561BAA8E2E00C03832 /* MenuControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3032B8A71805A10100064F85 /* DEMORootViewController.h */,
-				3032B8A81805A10100064F85 /* DEMORootViewController.m */,
-				3032B8CC1805A1BC00064F85 /* DEMOHomeViewController.h */,
-				3032B8CD1805A1BC00064F85 /* DEMOHomeViewController.m */,
-				3032B8CF1805A1D200064F85 /* DEMOMenuViewController.h */,
-				3032B8D01805A1D200064F85 /* DEMOMenuViewController.m */,
-				3032B8E51805A26500064F85 /* DEMONavigationController.h */,
-				3032B8E61805A26500064F85 /* DEMONavigationController.m */,
-				3032B8E81805A4BF00064F85 /* DEMOSecondViewController.h */,
-				3032B8E91805A4BF00064F85 /* DEMOSecondViewController.m */,
+				3032B8A71805A10100064F85 /* RootViewController.h */,
+				3032B8A81805A10100064F85 /* RootViewController.m */,
+				3032B8CC1805A1BC00064F85 /* HomeViewController.h */,
+				3032B8CD1805A1BC00064F85 /* HomeViewController.m */,
+				3032B8CF1805A1D200064F85 /* MenuViewController.h */,
+				3032B8D01805A1D200064F85 /* MenuViewController.m */,
+				3032B8E51805A26500064F85 /* NavigationController.h */,
+				3032B8E61805A26500064F85 /* NavigationController.m */,
+				3032B8E81805A4BF00064F85 /* SecondViewController.h */,
+				3032B8E91805A4BF00064F85 /* SecondViewController.m */,
 			);
 			name = MenuControllers;
 			sourceTree = "<group>";
@@ -241,10 +332,42 @@
 		56B9CA5C1BAA918C00C03832 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				569389861BB6731400460B27 /* img1.jpg */,
+				569389771BB6291300460B27 /* Shang.jpg */,
+				56B9CA9F1BAD22BE00C03832 /* home.png */,
+				56B9CA901BAD154100C03832 /* item1.png */,
+				56B9CA911BAD154100C03832 /* item2.png */,
+				56B9CA921BAD154100C03832 /* item3.png */,
 				56B9CA5F1BAA91A400C03832 /* bg_Bk.jpg */,
 				56B9CA5D1BAA919D00C03832 /* bg2.jpg */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		56B9CA7D1BACC1DC00C03832 /* SDKS */ = {
+			isa = PBXGroup;
+			children = (
+				56B9CA671BACC00C00C03832 /* AlipaySDK.bundle */,
+				56B9CA681BACC00C00C03832 /* AlipaySDK.framework */,
+				56B9CA691BACC00C00C03832 /* libUPPayPlugin.a */,
+				56B9CA6A1BACC00C00C03832 /* libWeChatSDK.a */,
+				56B9CA631BACBFFD00C03832 /* libpingpp.a */,
+				56B9CA7B1BACC19100C03832 /* Pingpp.h */,
+				56B9CA771BACC09D00C03832 /* mapapi.bundle */,
+			);
+			name = SDKS;
+			sourceTree = "<group>";
+		};
+		56B9CA7E1BACC20800C03832 /* PayController */ = {
+			isa = PBXGroup;
+			children = (
+				56B9CA7F1BACC38700C03832 /* Util.h */,
+				56B9CA801BACC38700C03832 /* Util.m */,
+				56B9CA961BAD17F600C03832 /* PayViewController.h */,
+				56B9CA971BAD17F600C03832 /* PayViewController.m */,
+				56B9CA981BAD17F600C03832 /* PayViewController.xib */,
+			);
+			name = PayController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +396,7 @@
 		3032B8871805A10100064F85 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = DEMO;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Shang Wang";
 			};
@@ -300,14 +423,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5606C80D1BA4C06B002F33D5 /* mapapi.bundle in Resources */,
+				569389851BB6725000460B27 /* LogInViewController.xib in Resources */,
+				56B9CA9B1BAD1C2300C03832 /* AlipaySDK.bundle in Resources */,
 				3032B8AB1805A10100064F85 /* Images.xcassets in Resources */,
+				56B9CAA01BAD22BE00C03832 /* home.png in Resources */,
+				5693897D1BB6650100460B27 /* CarServiceViewController.xib in Resources */,
+				56B9CA941BAD154100C03832 /* item2.png in Resources */,
 				3032B8FD1805AB5600064F85 /* avatar@2x.jpg in Resources */,
+				569389781BB6291300460B27 /* Shang.jpg in Resources */,
+				56B9CA9A1BAD17F600C03832 /* PayViewController.xib in Resources */,
 				56B9CA5E1BAA919D00C03832 /* bg2.jpg in Resources */,
 				309F5CD61817201B00502935 /* Main-iPad.storyboard in Resources */,
 				56B9CA601BAA91A400C03832 /* bg_Bk.jpg in Resources */,
+				56B9CA951BAD154100C03832 /* item3.png in Resources */,
+				569389871BB6731400460B27 /* img1.jpg in Resources */,
+				56B9CA781BACC09D00C03832 /* mapapi.bundle in Resources */,
 				3032B89D1805A10100064F85 /* InfoPlist.strings in Resources */,
 				3032B8A61805A10100064F85 /* Main.storyboard in Resources */,
+				56B9CA931BAD154100C03832 /* item1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,19 +451,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3032B8CE1805A1BC00064F85 /* DEMOHomeViewController.m in Sources */,
+				56B9CA7C1BACC19100C03832 /* Pingpp.h in Sources */,
+				3032B8CE1805A1BC00064F85 /* HomeViewController.m in Sources */,
+				569389801BB6710000460B27 /* LogInViewController.swift in Sources */,
 				5606C7FA1BA4BEF4002F33D5 /* REFrostedContainerViewController.m in Sources */,
 				3032B89F1805A10100064F85 /* main.m in Sources */,
-				3032B8A91805A10100064F85 /* DEMORootViewController.m in Sources */,
-				3032B8EA1805A4BF00064F85 /* DEMOSecondViewController.m in Sources */,
+				3032B8A91805A10100064F85 /* RootViewController.m in Sources */,
+				56B9CA811BACC38700C03832 /* Util.m in Sources */,
+				3032B8EA1805A4BF00064F85 /* SecondViewController.m in Sources */,
+				56B9CA991BAD17F600C03832 /* PayViewController.m in Sources */,
+				5693898B1BB88A1600460B27 /* KeychainWrapper.m in Sources */,
 				5606C7FE1BA4BEF4002F33D5 /* UIViewController+REFrostedViewController.m in Sources */,
+				569389841BB6725000460B27 /* LogInViewController.m in Sources */,
 				5606C7FC1BA4BEF4002F33D5 /* UIImage+REFrostedViewController.m in Sources */,
-				3032B8D11805A1D200064F85 /* DEMOMenuViewController.m in Sources */,
+				3032B8D11805A1D200064F85 /* MenuViewController.m in Sources */,
 				3032B8A31805A10100064F85 /* DEMOAppDelegate.mm in Sources */,
 				5606C7FD1BA4BEF4002F33D5 /* UIView+REFrostedViewController.m in Sources */,
-				3032B8E71805A26500064F85 /* DEMONavigationController.m in Sources */,
+				3032B8E71805A26500064F85 /* NavigationController.m in Sources */,
 				5606C7F91BA4BEF4002F33D5 /* RECommonFunctions.m in Sources */,
 				5606C7FB1BA4BEF4002F33D5 /* REFrostedViewController.m in Sources */,
+				5693897C1BB6650100460B27 /* CarServiceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,16 +587,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib/Channels",
+					"$(PROJECT_DIR)/lib",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "REFrostedViewControllerStoryboards/REFrostedViewControllerStoryboards-Prefix.pch";
 				INFOPLIST_FILE = "REFrostedViewControllerStoryboards/REFrostedViewControllerStoryboards-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/lib/Channels",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "REFrostedViewControllerStoryboards/REFrostedViewControllerStoryboards-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -467,16 +618,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib/Channels",
+					"$(PROJECT_DIR)/lib",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "REFrostedViewControllerStoryboards/REFrostedViewControllerStoryboards-Prefix.pch";
 				INFOPLIST_FILE = "REFrostedViewControllerStoryboards/REFrostedViewControllerStoryboards-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/lib/Channels",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "REFrostedViewControllerStoryboards/REFrostedViewControllerStoryboards-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

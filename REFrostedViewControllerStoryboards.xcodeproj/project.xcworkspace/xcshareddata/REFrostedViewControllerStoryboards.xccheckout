@@ -10,31 +10,31 @@
 	<string>REFrostedViewControllerStoryboards</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>846BE617AA9E74C124CCAACA9AE4C37BCADD90D2</key>
-		<string>ssh://github.com/romaonthego/REFrostedViewController.git</string>
+		<key>BF97D088D11A96350465BB9C9A23373A8223A26B</key>
+		<string>https://github.com/shangwang/ParkEase.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Examples/Storyboards/REFrostedViewControllerStoryboards/REFrostedViewControllerStoryboards.xcodeproj/project.xcworkspace</string>
+	<string>REFrostedViewControllerStoryboards.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>846BE617AA9E74C124CCAACA9AE4C37BCADD90D2</key>
-		<string>../../../../..</string>
+		<key>BF97D088D11A96350465BB9C9A23373A8223A26B</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/romaonthego/REFrostedViewController.git</string>
+	<string>https://github.com/shangwang/ParkEase.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>846BE617AA9E74C124CCAACA9AE4C37BCADD90D2</string>
+	<string>BF97D088D11A96350465BB9C9A23373A8223A26B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>846BE617AA9E74C124CCAACA9AE4C37BCADD90D2</string>
+			<string>BF97D088D11A96350465BB9C9A23373A8223A26B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>REFrostedViewController</string>
+			<string>Parkease</string>
 		</dict>
 	</array>
 </dict>
