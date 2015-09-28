@@ -33,6 +33,9 @@
 		5606C8061BA4BFDD002F33D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5606C8051BA4BFDD002F33D5 /* Security.framework */; };
 		5606C8081BA4BFE9002F33D5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5606C8071BA4BFE9002F33D5 /* SystemConfiguration.framework */; };
 		5606C80A1BA4C00C002F33D5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5606C8091BA4C00C002F33D5 /* MessageUI.framework */; };
+		563E916F1BB8AE940024143D /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 563E91691BB8AE940024143D /* CJSONDeserializer.m */; };
+		563E91701BB8AE940024143D /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 563E916B1BB8AE940024143D /* CJSONSerializer.m */; };
+		563E91711BB8AE940024143D /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 563E916E1BB8AE940024143D /* NSDictionary_JSONExtensions.m */; };
 		569389781BB6291300460B27 /* Shang.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 569389771BB6291300460B27 /* Shang.jpg */; };
 		5693897C1BB6650100460B27 /* CarServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5693897A1BB6650100460B27 /* CarServiceViewController.m */; };
 		5693897D1BB6650100460B27 /* CarServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5693897B1BB6650100460B27 /* CarServiceViewController.xib */; };
@@ -111,6 +114,13 @@
 		5606C8051BA4BFDD002F33D5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5606C8071BA4BFE9002F33D5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5606C8091BA4C00C002F33D5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		563E91681BB8AE940024143D /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		563E91691BB8AE940024143D /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		563E916A1BB8AE940024143D /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		563E916B1BB8AE940024143D /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		563E916C1BB8AE940024143D /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		563E916D1BB8AE940024143D /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		563E916E1BB8AE940024143D /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
 		569389771BB6291300460B27 /* Shang.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shang.jpg; sourceTree = "<group>"; };
 		569389791BB6650100460B27 /* CarServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarServiceViewController.h; sourceTree = "<group>"; };
 		5693897A1BB6650100460B27 /* CarServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarServiceViewController.m; sourceTree = "<group>"; };
@@ -303,9 +313,24 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		563E91671BB8AE8A0024143D /* TouchJson */ = {
+			isa = PBXGroup;
+			children = (
+				563E91681BB8AE940024143D /* CJSONDeserializer.h */,
+				563E91691BB8AE940024143D /* CJSONDeserializer.m */,
+				563E916A1BB8AE940024143D /* CJSONSerializer.h */,
+				563E916B1BB8AE940024143D /* CJSONSerializer.m */,
+				563E916C1BB8AE940024143D /* JSONRepresentation.h */,
+				563E916D1BB8AE940024143D /* NSDictionary_JSONExtensions.h */,
+				563E916E1BB8AE940024143D /* NSDictionary_JSONExtensions.m */,
+			);
+			name = TouchJson;
+			sourceTree = "<group>";
+		};
 		569389881BB889F100460B27 /* External Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				563E91671BB8AE8A0024143D /* TouchJson */,
 				569389891BB88A1600460B27 /* KeychainWrapper.h */,
 				5693898A1BB88A1600460B27 /* KeychainWrapper.m */,
 			);
@@ -451,6 +476,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				563E91711BB8AE940024143D /* NSDictionary_JSONExtensions.m in Sources */,
+				563E916F1BB8AE940024143D /* CJSONDeserializer.m in Sources */,
+				563E91701BB8AE940024143D /* CJSONSerializer.m in Sources */,
 				56B9CA7C1BACC19100C03832 /* Pingpp.h in Sources */,
 				3032B8CE1805A1BC00064F85 /* HomeViewController.m in Sources */,
 				569389801BB6710000460B27 /* LogInViewController.swift in Sources */,

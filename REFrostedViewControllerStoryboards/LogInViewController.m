@@ -46,7 +46,7 @@
         [alert show];
         return;
     }
-    //[[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"HasLogInKey"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"HasLogInKey"];
     [self.navigationController popViewControllerAnimated:NO];
 }
 
