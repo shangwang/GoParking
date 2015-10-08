@@ -22,8 +22,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ParkEase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="voW-gw-U3H">
-                    <rect key="frame" x="44" y="49" width="233" height="76"/>
+                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GoParking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="voW-gw-U3H">
+                    <rect key="frame" x="40" y="49" width="242" height="76"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="56"/>
                     <color key="textColor" red="0.20300679983193903" green="1" blue="0.23843202952339726" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,13 +31,13 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="6Wn-a1-Uxm">
                     <rect key="frame" x="44" y="156" width="233" height="30"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="qnM-l5-cFy">
                     <rect key="frame" x="44" y="219" width="233" height="30"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>

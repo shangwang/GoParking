@@ -12,5 +12,4 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bgImg;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passWordTextField;
-
 @end

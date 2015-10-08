@@ -290,6 +290,7 @@
 
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer
 {
+    
     if ([self.frostedViewController.delegate conformsToProtocol:@protocol(REFrostedViewControllerDelegate)] && [self.frostedViewController.delegate respondsToSelector:@selector(frostedViewController:didRecognizePanGesture:)])
         [self.frostedViewController.delegate frostedViewController:self.frostedViewController didRecognizePanGesture:recognizer];
     
@@ -394,6 +395,8 @@
             }
         }
     }
+    
+    
 }
 
 - (void)fixLayoutWithDuration:(NSTimeInterval)duration

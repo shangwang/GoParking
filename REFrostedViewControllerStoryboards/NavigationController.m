@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
+    //[self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
 }
 
 #pragma mark -

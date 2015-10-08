@@ -12,11 +12,12 @@
 #import "PayViewController.h"
 #import "DEMOAppDelegate.h"
 #import "Pingpp.h"
-
+#import "UIButton+Bootstrap.h"
+#import "ParkingLotInfoViewController.h"
 #define KBtn_width        200
 #define KBtn_height       40
 #define KXOffSet          (self.view.frame.size.width - KBtn_width) / 2
-#define KYOffSet          20
+#define KYOffSet          150
 
 #define kWaiting          @"正在获取支付凭据,请稍后..."
 #define kNote             @"提示"
@@ -24,7 +25,7 @@
 #define kErrorNet         @"网络错误"
 #define kResult           @"支付结果：%@"
 
-#define kPlaceHolder      @"支付金额"
+#define kPlaceHolder      @"其他金额"
 #define kMaxAmount        9999999
 
 #define kUrlScheme      @"demoapp001" // 这个是你定义的 URL Scheme，支付宝、微信支付和测试模式需要。
@@ -37,18 +38,27 @@
 @implementation PayViewController
 @synthesize channel;
 @synthesize mTextField;
-
+@synthesize parentParkingInfoView;
+@synthesize pickView;
+@synthesize dataSourceArray;
+@synthesize totalAmount;
+@synthesize firstHourRate;
+@synthesize halfHourRate;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    firstHourRate=10;
+    halfHourRate=8;
+    pickView.dataSource=self;
+    pickView.delegate=self;
+    pickView.userInteractionEnabled=YES;
+    [pickView becomeFirstResponder];
+    dataSourceArray = @[@"1", @"1.5", @"2", @"2.5", @"3", @"3.5", @"4", @"4.5", @"5", @"5.5", @"6"];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController setNavigationBarHidden:YES];
     // Do any additional setup after loading the view, typically from a nib.
-    CGRect viewRect = self.view.frame;
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:viewRect];
-    [scrollView setScrollEnabled:YES];
-    [self.view addSubview:scrollView];
-    
+
     CGRect windowRect = [[UIScreen mainScreen] bounds];
     UIImage *headerImg = [UIImage imageNamed:@"home.png"];
     CGFloat imgViewWith = windowRect.size.width * 0.9;
@@ -57,28 +67,8 @@
     [imgView setContentScaleFactor:[[UIScreen mainScreen] scale]];
     CGFloat imgx = windowRect.size.width/2-imgViewWith/2;
     [imgView setFrame:CGRectMake(imgx, KYOffSet, imgViewWith, imgViewHeight)];
-    [scrollView addSubview:imgView];
-    
-    mTextField = [[UITextField alloc]initWithFrame:CGRectMake(imgx, KYOffSet+imgViewHeight+40, imgViewWith-40, 40)];
-    mTextField.borderStyle = UITextBorderStyleRoundedRect;
-    mTextField.backgroundColor = [UIColor whiteColor];
-    mTextField.placeholder = kPlaceHolder;
-    mTextField.keyboardType = UIKeyboardTypeNumberPad;
-    mTextField.returnKeyType =UIReturnKeyDone;
-    mTextField.delegate = self;
-    [mTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-    [scrollView addSubview:mTextField];
-    
-    UIButton* doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [doneButton setTitle:@"OK" forState:UIControlStateNormal];
-    [doneButton addTarget:self action:@selector(okButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [doneButton setFrame:CGRectMake(imgx+imgViewWith-35, KYOffSet+imgViewHeight+40, 40, 40)];
-    [doneButton.layer setMasksToBounds:YES];
-    [doneButton.layer setCornerRadius:8.0];
-    [doneButton.layer setBorderWidth:1.0];
-    [doneButton.layer setBorderColor:[UIColor grayColor].CGColor];
-    [scrollView addSubview:doneButton];
-    
+    //[scrollView addSubview:imgView];
+
     UIButton* wxButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [wxButton setTitle:@"微信" forState:UIControlStateNormal];
     [wxButton addTarget:self action:@selector(normalPayAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -89,7 +79,9 @@
     [wxButton.layer setBorderColor:[UIColor grayColor].CGColor];
     wxButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     [wxButton setTag:1];
-    [scrollView addSubview:wxButton];
+    [wxButton successStyle];
+    
+    [self.view addSubview:wxButton];
     
     UIButton* alipayButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [alipayButton setTitle:@"支付宝" forState:UIControlStateNormal];
@@ -101,7 +93,8 @@
     [alipayButton.layer setBorderColor:[UIColor grayColor].CGColor];
     alipayButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     [alipayButton setTag:2];
-    [scrollView addSubview:alipayButton];
+    [alipayButton primaryStyle];
+    [self.view addSubview:alipayButton];
     
     UIButton* upmpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [upmpButton setTitle:@"银联" forState:UIControlStateNormal];
@@ -113,7 +106,8 @@
     [upmpButton.layer setBorderColor:[UIColor grayColor].CGColor];
     upmpButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     [upmpButton setTag:3];
-    [scrollView addSubview:upmpButton];
+    [upmpButton infoStyle];
+    [self.view addSubview:upmpButton];
     
     UIButton* bfbButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [bfbButton setTitle:@"百度钱包" forState:UIControlStateNormal];
@@ -125,9 +119,8 @@
     [bfbButton.layer setBorderColor:[UIColor grayColor].CGColor];
     bfbButton.titleLabel.font = [UIFont systemFontOfSize: 18.0];
     [bfbButton setTag:4];
-    [scrollView addSubview:bfbButton];
-    
-    [scrollView setContentSize:CGSizeMake(viewRect.size.width, KYOffSet+imgViewHeight+260+KBtn_height)];
+    [bfbButton warningStyle];
+    [self.view addSubview:bfbButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -148,8 +141,13 @@
 
 - (void)showAlertMessage:(NSString*)msg
 {
-    mAlert = [[UIAlertView alloc] initWithTitle:kNote message:msg delegate:nil cancelButtonTitle:kConfirm otherButtonTitles:nil, nil];
+     mAlert = [[UIAlertView alloc] initWithTitle:kNote message:msg delegate:nil cancelButtonTitle:kConfirm otherButtonTitles:nil, nil];
     [mAlert show];
+}
+
+-(void)finishPayment{
+    [parentParkingInfoView showAlertMessage];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)hideAlert
@@ -261,6 +259,32 @@
     if(offset > 0)
         self.view.frame = CGRectMake(0.0f, -offset, self.view.frame.size.width, self.view.frame.size.height);
     [UIView commitAnimations];
+}
+
+- (NSInteger)numberOfComponentsInPickerView: (UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+
+{
+    return  dataSourceArray.count;
+}
+
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return dataSourceArray[row];
+}
+
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    int total=(int)(firstHourRate+row*halfHourRate);
+     float rate = [dataSourceArray[row] floatValue];
+    NSString *resultString = [[NSString alloc] initWithFormat:@"%d ", total];
+    totalAmount.text = resultString;
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField

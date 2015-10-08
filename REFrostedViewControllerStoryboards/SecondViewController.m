@@ -26,4 +26,12 @@
     [self.frostedViewController presentMenuViewController];
 }
 
+
+-(void)viewDidLoad{
+    ListViewController* list= [[ListViewController alloc] init];
+    //[self.view addSubview:list.view];`
+    [self.navigationController pushViewController:list animated:NO];
+    //self.view=list.view;
+}
+
 @end

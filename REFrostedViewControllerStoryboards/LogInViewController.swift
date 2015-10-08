@@ -48,12 +48,17 @@ class LogInViewController: UIViewController {
         
         
         // Visual Effect View for background
-        var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark)) as UIVisualEffectView
+        if #available(iOS 8.0, *) {
+            var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Dark)) as UIVisualEffectView
+        } else {
+            // Fallback on earlier versions
+        }
+        /*
         visualEffectView.frame = self.view.frame
         visualEffectView.alpha = 0.5
         imageView.image = UIImage(named: "img1.jpg")
         imageView.addSubview(visualEffectView)
-        
+        */
         
         NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "changeImage", userInfo: nil, repeats: true)
         self.loginButton(false)
@@ -97,7 +102,7 @@ class LogInViewController: UIViewController {
     
     
     func textFieldDidChange() {
-        if usernameField.text.isEmpty || passwordField.text.isEmpty
+        if usernameField.text!.isEmpty || passwordField.text!.isEmpty
         {
             self.loginButton(false)
         }

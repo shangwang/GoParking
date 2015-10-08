@@ -180,7 +180,8 @@
     self.containerViewController.animateApperance = animateApperance;
     if (self.automaticSize) {
         if (self.direction == REFrostedViewControllerDirectionLeft || self.direction == REFrostedViewControllerDirectionRight)
-            self.calculatedMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width - 50.0f, self.contentViewController.view.frame.size.height);
+            //set menu bar size
+            self.calculatedMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width - 100.0f, self.contentViewController.view.frame.size.height);
         
         if (self.direction == REFrostedViewControllerDirectionTop || self.direction == REFrostedViewControllerDirectionBottom)
             self.calculatedMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width, self.contentViewController.view.frame.size.height - 50.0f);
@@ -230,7 +231,6 @@
 {
     if ([self.delegate conformsToProtocol:@protocol(REFrostedViewControllerDelegate)] && [self.delegate respondsToSelector:@selector(frostedViewController:didRecognizePanGesture:)])
         [self.delegate frostedViewController:self didRecognizePanGesture:recognizer];
-    
     if (!self.panGestureEnabled)
         return;
     
@@ -239,6 +239,7 @@
     }
     
     [self.containerViewController panGestureRecognized:recognizer];
+    
 }
 
 #pragma mark -
