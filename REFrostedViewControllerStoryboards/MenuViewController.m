@@ -16,6 +16,14 @@
 #import "ListViewController.h"
 #import "NotificattionViewController.h"
 #import "NotiViewController.h"
+#import "FriendListViewController.h"
+#import "GGTabBarController.h"
+
+#import "TestViewController1.h"
+#import "TestViewController2.h"
+#import "TestViewController3.h"
+#import "OrderController.h"
+
 @interface MenuViewController ()
 
 @end
@@ -119,7 +127,7 @@
         [navigationController pushViewController:vc animated:NO];
         
     }else if(0==indexPath.section  && 2==indexPath.row){
-        ListViewController* list= [[ListViewController alloc] init];
+        FriendListViewController* list= [[FriendListViewController alloc] init];
         HomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"homeController"];
         navigationController.viewControllers = @[homeViewController];
         [navigationController pushViewController:list animated:NO];
@@ -130,6 +138,12 @@
         NotiViewController *serviceView=[[NotiViewController alloc]initWithNibName:@"NotiViewController" bundle:nil];
         [navigationController pushViewController:serviceView animated:YES];
         
+    }
+    else if(0==indexPath.section  && 4==indexPath.row){
+        OrderController *orderView= [[OrderController alloc]init];
+         [navigationController pushViewController:orderView animated:YES];
+        
+
     }
     else {
         // SecondViewController *secondViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"secondController"];

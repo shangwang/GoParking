@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -38,6 +38,8 @@
             <connections>
                 <outlet property="headImg" destination="K9n-iB-LM1" id="x10-KW-ckn"/>
                 <outlet property="name" destination="gFg-eR-6uT" id="0au-WM-G4Y"/>
+                <outlet property="rsvpBtn" destination="FcI-aw-uZJ" id="uhR-VL-G1R"/>
+                <outlet property="starImg" destination="EPz-ic-qk7" id="PpG-Wv-7zG"/>
             </connections>
             <point key="canvasLocation" x="345" y="280"/>
         </tableViewCell>
@@ -45,9 +47,4 @@
     <resources>
         <image name="st5.png" width="453" height="116"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

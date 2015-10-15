@@ -56,7 +56,8 @@
     [menuButton setFrame:CGRectMake(menuButton.frame.origin.x, menuButton.frame.origin.y, menuButton.frame.size.height, menuButton.frame.size.height)];
     self.frostedViewController.panGestureEnabled=NO;
     mapView.delegate=self;
-    self.navigationController.navigationBar.alpha=0.8;
+   // self.navigationController.navigationBar.backgroundColor= [UIColor whiteColor];
+    //self.navigationController.navigationBar.alpha=0.8;
        
     searchBar = [UISearchBar new];
     [searchBar setFrame:CGRectMake(searchBar.frame.origin.x-self.navigationController.navigationBar.frame.size.width*0.07+40, searchBar.frame.origin.y, self.navigationController.navigationBar.frame.size.width*0.65, searchBar.frame.size.height)];
@@ -107,7 +108,22 @@
                                             action:@selector(previewSingleTap:)];
     [preView addGestureRecognizer:singleFingerTap];
     [preView setHidden:YES];
+    [mapView setZoomLevel:12];
+    
+    
+    
+    UIImage *img=[UIImage imageNamed:@"white"];
+    img= [self imageWithImage:img scaledToSize:self.navigationController.navigationBar.frame.size];
+    self.navigationController.navigationBar.backIndicatorImage=img;
 
+}
+
+-(UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 

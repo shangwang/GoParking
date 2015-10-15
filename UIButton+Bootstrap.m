@@ -9,16 +9,16 @@
 #import <QuartzCore/QuartzCore.h>
 @implementation UIButton (Bootstrap)
 
--(void)defaultBootstrapStyle{
+-(void)bootstrapStyle{
     self.layer.borderWidth = 1;
-    self.layer.cornerRadius = 20.0;
+    self.layer.cornerRadius = self.frame.size.height/4;
     self.layer.masksToBounds = YES;
     [self setAdjustsImageWhenHighlighted:NO];
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.titleLabel setFont:[UIFont fontWithName:@"FontAwesome" size:self.titleLabel.font.pointSize]];
 }
 
--(void)bootstrapStyle{
+-(void)RoundbootstrapStyle{
     self.layer.borderWidth = 1;
     self.layer.cornerRadius = self.frame.size.height/2;
     self.layer.masksToBounds = YES;

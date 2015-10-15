@@ -6,7 +6,7 @@
 
 #import "DoubleViewController.h"
 #import "CLTree.h"
-
+#import "ChatViewController.h"
 @interface DoubleViewController ()
 
 @property(strong,nonatomic) NSMutableArray* dataArray; //保存全部数据的数组
@@ -24,8 +24,13 @@
     _myTableView.delegate = self;
     CGRect tableViewFrame = CGRectMake(self.view.frame.size.width*0.1/2, 0, self.view.frame.size.width*0.9, self.view.frame.size.height);
     _myTableView.frame = tableViewFrame;
-    UIImage *patternImage = [UIImage imageNamed:@"bg_blur"];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage: patternImage]];
+   
+
+    UIImage *img=[UIImage imageNamed:@"bg_blur"];
+    img= [self imageWithImage:img scaledToSize:(self.view.frame.size)];
+    self.view.backgroundColor=[[UIColor alloc] initWithPatternImage:img];
+    
+    
     [self.view addSubview:_myTableView];
     _myTableView.backgroundColor = [UIColor clearColor];
     _myTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -33,11 +38,21 @@
     [self reloadDataForDisplayArray];//初始化将要显示的数据
 }
 
+-(UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
 -(void)changeFrame: (CGRect)frame{
     _myTableView.frame = frame;
-    
 }
+
 
 //添加演示数据
 -(void) addTestData{
@@ -248,6 +263,9 @@
     [self reloadDataForDisplayArrayChangeAt:indexPath.row];//修改cell的状态(关闭或打开)
     if(node.type == 2){
         //处理叶子节点选中，此处需要自定义
+        
+        ChatViewController *viewController = [[ChatViewController alloc] init];
+        [self.navigationController pushViewController:viewController animated:YES];
     }
     else{
         CLTreeView_LEVEL0_Cell *cell = (CLTreeView_LEVEL0_Cell*)[tableView cellForRowAtIndexPath:indexPath];

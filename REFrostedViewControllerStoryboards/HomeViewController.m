@@ -60,9 +60,13 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     dataCount=3;
-    mainView.backgroundColor=[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg_blur.png"]];
+    
+    UIImage *img=[UIImage imageNamed:@"bg_blur"];
+    img= [self imageWithImage:img scaledToSize:(mainView.frame.size)];
+    mainView.backgroundColor=[[UIColor alloc] initWithPatternImage:img];
+    
     serviceListArray = @[@"充值礼券", @"发送礼券", @"洗车服务", @"代驾服务", @"代泊服务", @"人工服务",@"休闲娱乐"];
-    [menuIcon setFrame:CGRectMake(menuIcon.frame.origin.x, menuIcon.frame.origin.y, menuIcon.frame.size.height, menuIcon.frame.size.height)];\
+    [menuIcon setFrame:CGRectMake(menuIcon.frame.origin.x, menuIcon.frame.origin.y, menuIcon.frame.size.height, menuIcon.frame.size.height)];
     //[fingParkingButton infoStyle];
     //[serviceButton successStyle];
     self.frostedViewController.panGestureEnabled=NO;
@@ -367,5 +371,14 @@
     [self.notificationTableView reloadData];
 }
 
+
+
+-(UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
 @end

@@ -33,6 +33,19 @@
     userNameTextField.alpha=0.5;
     //[userNameTextField setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
     passWordTextField.alpha=0.5;
+    UIImage *img=[UIImage imageNamed:@"bg_blur"];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+
+    img= [self imageWithImage:img scaledToSize:screenRect.size];
+    self.view.backgroundColor=[[UIColor alloc] initWithPatternImage:img];
+}
+
+-(UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 - (void)didReceiveMemoryWarning {

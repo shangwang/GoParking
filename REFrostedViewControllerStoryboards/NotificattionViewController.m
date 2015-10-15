@@ -18,8 +18,12 @@
 @synthesize notificationTableView;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg_blur.png"]];
    self.dataCount=5;
+    
+    UIImage *img=[UIImage imageNamed:@"bg_blur"];
+    img= [self imageWithImage:img scaledToSize:(self.view.frame.size)];
+    self.view.backgroundColor=[[UIColor alloc] initWithPatternImage:img];
+
     /*
     // Do any additional setup after loading the view from its nib.
     notificationTableView.dataSource = self;
@@ -34,6 +38,17 @@
     [notificationTableView setFrame: CGRectMake(200, 500, 300, 300)];
     [self addTestData];//添加演示数据
      */
+}
+
+-(UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 - (void)didReceiveMemoryWarning {

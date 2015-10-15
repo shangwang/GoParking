@@ -15,6 +15,8 @@
 @property (strong,nonatomic) IBOutlet UIImageView *headImg;
 @property (strong,nonatomic) IBOutlet UILabel *signture;//个性签名
 @property (strong,nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UIImageView *starImg;
+@property (weak, nonatomic) IBOutlet UIButton *rsvpBtn;
 
 @end
 
