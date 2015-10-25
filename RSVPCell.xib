@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell autoresizesSubviews="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="123" id="KGk-i7-Jjw" customClass="RsvpCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开放时间  6:00 - 2:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfA-gc-MVZ">
+                        <rect key="frame" x="108" y="8" width="165" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="0Uh-fR-2qj"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="165" id="D9w-w3-QhC"/>
+                            <constraint firstAttribute="width" constant="165" id="KDP-h5-J3A"/>
+                            <constraint firstAttribute="height" constant="21" id="UgQ-hf-sd7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.035294117647058823" green="0.69803921568627447" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wod-fa-n9i">
+                        <rect key="frame" x="33" y="48" width="136" height="46"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="7nX-Yf-mwF"/>
+                            <constraint firstAttribute="width" constant="136" id="Kct-3k-8EV"/>
+                            <constraint firstAttribute="height" constant="46" id="VEG-zO-Joo"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="136" id="xOj-E1-o6y"/>
+                        </constraints>
+                        <state key="normal" title="预约"/>
+                        <connections>
+                            <action selector="reserve:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Igq-Vr-ziy"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLR-V4-HxD">
+                        <rect key="frame" x="219" y="48" width="136" height="46"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="46" id="9ec-bK-KEC"/>
+                            <constraint firstAttribute="width" constant="136" id="MsS-rx-G9g"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="PPZ-fb-jEX"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="136" id="aCq-5e-qgT"/>
+                        </constraints>
+                        <state key="normal" title="导航"/>
+                        <connections>
+                            <action selector="navigate:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="okF-bP-uf4"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="lqb-hJ-Q3y">
+                        <rect key="frame" x="1" y="22" width="375" height="19"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="3rn-mM-1m2"/>
+                            <constraint firstAttribute="height" constant="19" id="AJi-Hf-QAx"/>
+                            <constraint firstAttribute="width" constant="375" id="xmx-gK-5IL"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="y7B-7N-f2L"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time.png" translatesAutoresizingMaskIntoConstraints="NO" id="4uf-cP-i1l">
+                        <rect key="frame" x="75" y="9" width="20" height="20"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="GXL-ZW-phZ"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="SKG-ss-wtm"/>
+                            <constraint firstAttribute="height" constant="20" id="WZd-ti-Pv6"/>
+                            <constraint firstAttribute="width" constant="20" id="dWx-ub-toR"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="PfA-gc-MVZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1XX-rh-jSC"/>
+                    <constraint firstAttribute="trailing" secondItem="lqb-hJ-Q3y" secondAttribute="trailing" constant="-1" id="Bkz-bB-Zbu"/>
+                    <constraint firstItem="PfA-gc-MVZ" firstAttribute="leading" secondItem="4uf-cP-i1l" secondAttribute="trailing" constant="13" id="Ewj-eM-H6c"/>
+                    <constraint firstAttribute="bottom" secondItem="Wod-fa-n9i" secondAttribute="bottom" constant="10" id="H4P-u9-gH9"/>
+                    <constraint firstItem="4uf-cP-i1l" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="Lgi-FR-0Id"/>
+                    <constraint firstItem="lqb-hJ-Q3y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="1" id="NeR-To-DRn"/>
+                    <constraint firstItem="KLR-V4-HxD" firstAttribute="top" secondItem="PfA-gc-MVZ" secondAttribute="bottom" constant="19" id="Qdx-Jf-Iao"/>
+                    <constraint firstItem="Wod-fa-n9i" firstAttribute="top" secondItem="lqb-hJ-Q3y" secondAttribute="bottom" constant="7" id="Vvs-Dw-Ayg"/>
+                    <constraint firstAttribute="trailing" secondItem="PfA-gc-MVZ" secondAttribute="trailing" constant="102" id="YMH-WS-yKb"/>
+                    <constraint firstAttribute="trailing" secondItem="KLR-V4-HxD" secondAttribute="trailing" constant="20" id="gMv-pe-kpK"/>
+                    <constraint firstAttribute="bottom" secondItem="KLR-V4-HxD" secondAttribute="bottom" constant="10" id="hr0-iw-LiC"/>
+                    <constraint firstItem="4uf-cP-i1l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="75" id="omf-kx-Ey6"/>
+                    <constraint firstItem="KLR-V4-HxD" firstAttribute="top" secondItem="lqb-hJ-Q3y" secondAttribute="bottom" constant="7" id="onm-aY-hYM"/>
+                    <constraint firstItem="lqb-hJ-Q3y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="owX-5F-3do"/>
+                    <constraint firstItem="Wod-fa-n9i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="33" id="pjI-aa-iF1"/>
+                    <constraint firstItem="KLR-V4-HxD" firstAttribute="leading" secondItem="Wod-fa-n9i" secondAttribute="trailing" constant="50" id="wSW-15-enD"/>
+                    <constraint firstItem="Wod-fa-n9i" firstAttribute="top" secondItem="4uf-cP-i1l" secondAttribute="bottom" constant="19" id="yMt-1O-jli"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="NaviBtn" destination="KLR-V4-HxD" id="OST-Cu-Vww"/>
+                <outlet property="RsvpBtn" destination="Wod-fa-n9i" id="HTS-90-bm3"/>
+            </connections>
+            <point key="canvasLocation" x="498.5" y="289.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="line.png" width="600" height="50"/>
+        <image name="time.png" width="768" height="768"/>
+    </resources>
+</document>

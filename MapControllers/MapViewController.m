@@ -5,7 +5,7 @@
 //  Created by Shang Wang on 9/28/15.
 //  Copyright (c) 2015 Shang Wang. All rights reserved.
 //
-#import "ParkingLotInfoViewController.h"
+
 #import "MapViewController.h"
 
 
@@ -17,12 +17,14 @@
 #import "BDRecognizerViewDelegate.h"
 #import "BDVRFileRecognizer.h"
 #import "BDVRDataUploader.h"
+#import "NotiViewController.h"
+#import "ParkingInfoController.h"
 #define API_KEY @"gSBMabfRftHwUgxzFNjQZMAq" // 请修改为您在百度开发者平台申请的API_KEY
 #define SECRET_KEY @"GAQZF687IQxMztYG7K64HGAMkozEdnYX" // 请修改您在百度开发者平台申请的SECRET_KEY
 
 
 @interface MapViewController (){
-       bool isGeoSearch;
+    bool isGeoSearch;
 }
 @end
 
@@ -40,25 +42,36 @@
 @synthesize preViewAvailable;
 @synthesize preViewTitle;
 @synthesize preViewTotal;
-
-
+@synthesize voiceSearchBtn;
+@synthesize locationBtn;
+@synthesize callBtn;
+@synthesize previewIsShow;
+@synthesize myLocation;
 - (id) init {
     if (self = [super init]) {
         annotatoinAry=[[NSMutableArray alloc] init];
     }
+    previewIsShow=NO;
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    myLocation.latitude=43.834165;
+    myLocation.longitude=87.618283;
     geocodesearch = [[BMKGeoCodeSearch alloc]init];
     geocodesearch.delegate=self;
     [menuButton setFrame:CGRectMake(menuButton.frame.origin.x, menuButton.frame.origin.y, menuButton.frame.size.height, menuButton.frame.size.height)];
     self.frostedViewController.panGestureEnabled=NO;
     mapView.delegate=self;
-   // self.navigationController.navigationBar.backgroundColor= [UIColor whiteColor];
+    // self.navigationController.navigationBar.backgroundColor= [UIColor whiteColor];
     //self.navigationController.navigationBar.alpha=0.8;
-       
+    
+    voiceSearchBtn.backgroundColor=[[UIColor whiteColor]colorWithAlphaComponent:0.8];
+    locationBtn.backgroundColor=[[UIColor whiteColor]colorWithAlphaComponent:0.8];
+    callBtn.backgroundColor=[[UIColor whiteColor]colorWithAlphaComponent:0.8];
+    
+    
     searchBar = [UISearchBar new];
     [searchBar setFrame:CGRectMake(searchBar.frame.origin.x-self.navigationController.navigationBar.frame.size.width*0.07+40, searchBar.frame.origin.y, self.navigationController.navigationBar.frame.size.width*0.65, searchBar.frame.size.height)];
     menuButton.alpha=0.7;
@@ -68,7 +81,7 @@
     UIImage *myIcon = [MapViewController imageWithImage:bookMark scaledToSize:CGSizeMake(searchBar.frame.size.height*0.8, searchBar.frame.size.height*0.8)];
     
     [searchBar setImage:bookMark forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateNormal];
- 
+    
     searchBar.placeholder=@"搜索停车场";
     [searchBar setBackgroundImage:[UIImage new]];
     searchBar.alpha=0.7;
@@ -107,15 +120,12 @@
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(previewSingleTap:)];
     [preView addGestureRecognizer:singleFingerTap];
-    [preView setHidden:YES];
-    [mapView setZoomLevel:12];
-    
-    
+    //[preView setHidden:YES];
+    [mapView setZoomLevel:17];
     
     UIImage *img=[UIImage imageNamed:@"white"];
     img= [self imageWithImage:img scaledToSize:self.navigationController.navigationBar.frame.size];
     self.navigationController.navigationBar.backIndicatorImage=img;
-
 }
 
 -(UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
@@ -128,10 +138,16 @@
 
 
 - (void)previewSingleTap:(UITapGestureRecognizer *)recognizer {
+    /*
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"
                                                   bundle:nil];
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"ParkingLotInfoViewController"];
     [self.navigationController pushViewController:vc animated:YES];
+     */
+    
+    ParkingInfoController *serviceView=[[ParkingInfoController alloc]init];
+    [self.navigationController pushViewController:serviceView animated:YES];
+
 }
 
 
@@ -142,7 +158,7 @@
     // 创建识别控件
     BDRecognizerViewController *tmpRecognizerViewController = [[BDRecognizerViewController alloc] initWithOrigin:CGPointMake(35, 128) withTheme:nil];
     //BDRecognizerViewController *tmpRecognizerViewController = [[BDRecognizerViewController alloc] initWithOrigin:CGPointMake([[UIApplication sharedApplication] keyWindow].frame.size.width/10, 128) withTheme:nil];
-     recognizerViewController = tmpRecognizerViewController;
+    recognizerViewController = tmpRecognizerViewController;
     tmpRecognizerViewController.delegate=self;
     
     // 设置识别参数
@@ -232,72 +248,71 @@
 {
     BMKPointAnnotation* pointAnnotation;
     pointAnnotation = [[BMKPointAnnotation alloc]init];
-   // CLLocationCoordinate2D coor;
-    coor.latitude -= 0.15;
-    coor.longitude -=0.15;
+    // CLLocationCoordinate2D coor;
     float r = arc4random_uniform(100)/0.99;
     float r2 = arc4random_uniform(100)/0.99;
-    int plus=arc4random_uniform(1);
+    int plus=arc4random_uniform(2);
     if(0==plus){
-        coor.latitude+=r/300;
+        coor.latitude+=r/19000;
     }else{
-        coor.latitude-=r/300;
+        coor.latitude-=r/19000;
     }
-    int log=arc4random_uniform(1);
+    int log=arc4random_uniform(2);
     if(0==log){
-        coor.longitude+=r2/300;
+        coor.longitude+=r2/19000;
     }else{
-        coor.longitude-=r2/300;
+        coor.longitude-=r2/19000;
     }
     pointAnnotation.coordinate = coor;
     pointAnnotation.title = name;
     pointAnnotation.subtitle = price;
     [annotatoinAry addObject:pointAnnotation];
     [mapView addAnnotation:pointAnnotation];
-    BMKAnnotationView* anoView=[mapView viewForAnnotation:pointAnnotation];
-    UIImage* anoIMG= [UIImage imageNamed:@"marker_blue"];
     
-    anoView.image=[MapViewController imageWithImage:anoIMG scaledToSize:CGSizeMake(38, 38)];
+    BMKAnnotationView* anoView=[mapView viewForAnnotation:pointAnnotation];
+    UIImage* anoIMG= [UIImage imageNamed:@"carportx3"];
+    
+    anoView.image=[MapViewController imageWithImage:anoIMG scaledToSize:CGSizeMake(32, 45)];
     
     UITapGestureRecognizer *singleFingerTap =
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(handleSingleTap:)];
     [anoView addGestureRecognizer:singleFingerTap];
-    
-    UILabel *yourLabel = [[UILabel alloc] initWithFrame:CGRectMake(9, 6, 30, 15)];
-    int rprice = arc4random_uniform(30);
-    NSString* priceString= [[NSString alloc]initWithFormat:@"￥%d",rprice];
-    yourLabel.text=priceString;
-    [yourLabel setTextColor:[UIColor colorWithRed:68/255.0f green:163/255.0f blue:211/255.0f alpha:1.0f]];
-    [yourLabel setBackgroundColor:[UIColor clearColor]];
-    [yourLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 9.0f]];
-    [anoView addSubview:yourLabel];
-    
+    /*
+     UILabel *yourLabel = [[UILabel alloc] initWithFrame:CGRectMake(9, 6, 30, 15)];
+     int rprice = arc4random_uniform(30);
+     NSString* priceString= [[NSString alloc]initWithFormat:@"￥%d",rprice];
+     yourLabel.text=priceString;
+     [yourLabel setTextColor:[UIColor colorWithRed:68/255.0f green:163/255.0f blue:211/255.0f alpha:1.0f]];
+     [yourLabel setBackgroundColor:[UIColor clearColor]];
+     [yourLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 9.0f]];
+     [anoView addSubview:yourLabel];
+     */
     
 }
 
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
-    UIImage* anoIMG= [UIImage imageNamed:@"marker_blue"];
+    UIImage* anoIMG= [UIImage imageNamed:@"carportx3"];
     for (BMKPointAnnotation* ano in annotatoinAry) {
         BMKAnnotationView* anoView=[mapView viewForAnnotation:ano];
-         anoView.image=[MapViewController imageWithImage:anoIMG scaledToSize:CGSizeMake(40, 40)];
+        anoView.image=[MapViewController imageWithImage:anoIMG scaledToSize:CGSizeMake(32, 45)];
         
         for (UIView *subview in anoView.subviews)
         {
             if([subview isKindOfClass:[UILabel class]]){
                 UILabel *textView = (UILabel*)subview;
                 [textView setTextColor:[UIColor colorWithRed:68/255.0f green:163/255.0f blue:211/255.0f alpha:1.0f]];
-               [textView setFrame:CGRectMake(9, 6, 30, 15)];
+                [textView setFrame:CGRectMake(9, 6, 30, 15)];
                 [textView setFont:[UIFont fontWithName: @"Trebuchet MS" size: 9.0f]];
             }
         }
     }
-    anoIMG= [UIImage imageNamed:@"marker_orange"];
+    anoIMG= [UIImage imageNamed:@"carport_selectedx3"];
     
     [preView setHidden:NO];
     BMKAnnotationView* anoView=(BMKAnnotationView*)recognizer.view;
-    anoView.image=[MapViewController imageWithImage:anoIMG scaledToSize:CGSizeMake(40*1.4,40*1.4)];
+    anoView.image=[MapViewController imageWithImage:anoIMG scaledToSize:CGSizeMake(32*1.4,45*1.4)];
     
     
     BMKPointAnnotation* pointAnnotation=anoView.annotation;
@@ -316,6 +331,45 @@
     }
     
     //Do stuff here...
+    if(!previewIsShow){
+        float newheight=voiceSearchBtn.frame.origin.y-preView.frame.size.height/2;
+        CGPoint voicesearchPosition=CGPointMake(voiceSearchBtn.center.x, newheight);
+        CGPoint callBtnPosition=CGPointMake(callBtn.center.x, newheight);
+        CGPoint locationBtnhPosition=CGPointMake(locationBtn.center.x, newheight);
+        CGPoint previewLocation=CGPointMake(preView.center.x, locationBtn.center.y+5);
+        
+        [UIView animateWithDuration:0.3f
+                              delay:0.0f
+                            options:UIViewAnimationOptionTransitionCrossDissolve
+                         animations:^{
+                             voiceSearchBtn.center=voicesearchPosition;
+                         }
+                         completion:nil];
+        [UIView animateWithDuration:0.3f
+                              delay:0.0f
+                            options:UIViewAnimationOptionTransitionCrossDissolve
+                         animations:^{
+                             callBtn.center=callBtnPosition;
+                         }
+                         completion:nil];
+        [UIView animateWithDuration:0.3f
+                              delay:0.0f
+                            options:UIViewAnimationOptionTransitionCrossDissolve
+                         animations:^{
+                             locationBtn.center=locationBtnhPosition;
+                         }
+                         completion:nil];
+        [UIView animateWithDuration:0.3f
+                              delay:0.0f
+                            options:UIViewAnimationOptionTransitionCrossDissolve
+                         animations:^{
+                             preView.center=previewLocation;
+                         }
+                         completion:nil];
+        
+        previewIsShow=YES;
+    }
+    
 }
 
 -(void)removeAllAnnotation{
@@ -386,18 +440,19 @@
     array = [NSArray arrayWithArray:mapView.overlays];
     [mapView removeOverlays:array];
     if (error == 0) {
-        BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
-        item.coordinate = result.location;
-        item.title = result.address;
-        [mapView addAnnotation:item];
-         mapView.centerCoordinate = result.location;
-        [mapView setZoomLevel:12];
+        [self addTestAnnotation];
     }
-    [self addTestAnnotation];
+    
 }
 
 
 -(void)addTestAnnotation{
+    
+    BMKPointAnnotation* pointAnnotation;
+    pointAnnotation = [[BMKPointAnnotation alloc]init];
+    pointAnnotation.coordinate = mapView.centerCoordinate;
+    [annotatoinAry addObject:pointAnnotation];
+    [mapView addAnnotation:pointAnnotation];
     [self addPointAnnotation:@"人民路停车场" price:@"￥ 30" Coordinate:mapView.centerCoordinate];
     [self addPointAnnotation:@"华联停车场" price:@"￥ 30" Coordinate:mapView.centerCoordinate];
     [self addPointAnnotation:@"工人路停车场" price:@"￥ 30" Coordinate:mapView.centerCoordinate];
@@ -425,20 +480,82 @@
         NSMutableString *tmpString = [[NSMutableString alloc] initWithString:@""];
         [tmpString appendFormat:@"%@",[audioResultData objectAtIndex:0]];
         /* get //all possible result
-        for (int i=0; i < [audioResultData count]; i++)
-        {
-            [tmpString appendFormat:@"%@\r\n",[audioResultData objectAtIndex:i]];
-        }*/
+         for (int i=0; i < [audioResultData count]; i++)
+         {
+         [tmpString appendFormat:@"%@\r\n",[audioResultData objectAtIndex:i]];
+         }*/
         [self searchGeocode:@"" adr:tmpString];
-       // NSLog(tmpString);
+        // NSLog(tmpString);
         
     }
     else
     {
-
+        
         NSString *tmpString = [[BDVRSConfig sharedInstance] composeInputModeResult:aResults];
-
+        
     }
+}
+- (IBAction)startVoiceSearch:(id)sender {
+    // 创建识别控件
+    BDRecognizerViewController *tmpRecognizerViewController = [[BDRecognizerViewController alloc] initWithOrigin:CGPointMake(35, 128) withTheme:nil];
+    //BDRecognizerViewController *tmpRecognizerViewController = [[BDRecognizerViewController alloc] initWithOrigin:CGPointMake([[UIApplication sharedApplication] keyWindow].frame.size.width/10, 128) withTheme:nil];
+    recognizerViewController = tmpRecognizerViewController;
+    tmpRecognizerViewController.delegate=self;
+    
+    // 设置识别参数
+    BDRecognizerViewParamsObject *paramsObject = [[BDRecognizerViewParamsObject alloc] init];
+    
+    // 开发者信息，必须修改API_KEY和SECRET_KEY为在百度开发者平台申请得到的值，否则示例不能工作
+    paramsObject.apiKey = API_KEY;
+    paramsObject.secretKey = SECRET_KEY;
+    
+    // 设置是否需要语义理解，只在搜索模式有效
+    paramsObject.isNeedNLU = [BDVRSConfig sharedInstance].isNeedNLU;
+    
+    // 设置识别语言
+    paramsObject.language = [BDVRSConfig sharedInstance].recognitionLanguage;
+    
+    // 设置识别模式，分为搜索和输入
+    paramsObject.recogPropList = @[[BDVRSConfig sharedInstance].recognitionProperty];
+    
+    // 设置城市ID，当识别属性包含EVoiceRecognitionPropertyMap时有效
+    paramsObject.cityID = 1;
+    
+    // 开启联系人识别
+    //    paramsObject.enableContacts = YES;
+    
+    // 设置显示效果，是否开启连续上屏
+    if ([BDVRSConfig sharedInstance].resultContinuousShow)
+    {
+        paramsObject.resultShowMode = BDRecognizerResultShowModeContinuousShow;
+    }
+    else
+    {
+        paramsObject.resultShowMode = BDRecognizerResultShowModeWholeShow;
+    }
+    
+    // 设置提示音开关，是否打开，默认打开
+    if ([BDVRSConfig sharedInstance].uiHintMusicSwitch)
+    {
+        paramsObject.recordPlayTones = EBDRecognizerPlayTonesRecordPlay;
+    }
+    else
+    {
+        paramsObject.recordPlayTones = EBDRecognizerPlayTonesRecordForbidden;
+    }
+    
+    paramsObject.isShowTipAfterSilence = NO;
+    paramsObject.isShowHelpButtonWhenSilence = NO;
+    paramsObject.tipsTitle = @"可以使用如下指令记账";
+    paramsObject.tipsList = [NSArray arrayWithObjects:@"我要记账", @"买苹果花了十块钱", @"买牛奶五块钱", @"第四行滚动后可见", @"第五行是最后一行", nil];
+    [recognizerViewController startWithParams:paramsObject];
+}
+
+- (IBAction)pinPoint:(id)sender {
+    myLocation.latitude=43.834165;
+    myLocation.longitude=87.618283;
+    mapView.centerCoordinate=myLocation;
+    [self addTestAnnotation];
 }
 
 /*

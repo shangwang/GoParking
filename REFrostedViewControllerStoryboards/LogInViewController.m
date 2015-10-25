@@ -53,7 +53,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)clickOnLogIn:(id)sender {
-    /*
+    
     NSString *userName=userNameTextField.text;
     NSString *password=passWordTextField.text;
     if(0==userName.length||0==password.length){
@@ -62,7 +62,7 @@
         return;
     }
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString* urlString=[[NSString alloc] initWithFormat:@"http://101.200.192.56/Member/LoginMember?UserName=%@&Password=%@", userName,password];
+    NSString* urlString=[[NSString alloc] initWithFormat:@"http://101.200.192.56/Member/LoginMember?UserName=%@&Password=%@",userName,password];
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"POST"];
     
@@ -87,6 +87,11 @@
                                 [[NSUserDefaults standardUserDefaults] setObject: photoUrl forKey:@"PhotoUrl"];
                                 [self.navigationController setNavigationBarHidden:NO animated:YES];
                                 [self.navigationController popViewControllerAnimated:NO];
+                                
+                                
+                                [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"HasLogInKey"];
+                                [self.navigationController setNavigationBarHidden:NO animated:YES];
+                                [self.navigationController popViewControllerAnimated:NO];
                             }
                         }
                         else{
@@ -94,10 +99,8 @@
                         }
                     });
     }] resume];
-     */
-    [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"HasLogInKey"];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [self.navigationController popViewControllerAnimated:NO];
+    
+    
 
 }
 

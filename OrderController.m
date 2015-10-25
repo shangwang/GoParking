@@ -32,7 +32,7 @@
     
     self.segmentedControl4 = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, viewWidth, 50)];
     self.segmentedControl4.sectionTitles = @[@"待处理", @"处理中", @"已完成"];
-    self.segmentedControl4.selectedSegmentIndex = 1;
+    self.segmentedControl4.selectedSegmentIndex = 0;
     self.segmentedControl4.backgroundColor = [UIColor whiteColor];
     self.segmentedControl4.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor grayColor]};
     self.segmentedControl4.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor orangeColor]};
@@ -54,12 +54,11 @@
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.contentSize = CGSizeMake(viewWidth * 3, viewHeight-60);
     self.scrollView.delegate = self;
-    [self.scrollView scrollRectToVisible:CGRectMake(viewWidth, 0, viewWidth, viewHeight-60) animated:NO];
+    [self.scrollView scrollRectToVisible:CGRectMake(0, 0, viewWidth, viewHeight-60) animated:NO];
     [self.view addSubview:self.scrollView];
     
-    
     OrderToDo *serviceView=[[OrderToDo alloc]init];
-    //[serviceView.view setFrame:CGRectMake(0, 0, viewWidth, viewHeight-60)];
+    [serviceView.view setFrame:CGRectMake(0, 0, viewWidth, viewHeight-60)];
     [self addChildViewController:serviceView];
     [self.scrollView addSubview:serviceView.view];
 

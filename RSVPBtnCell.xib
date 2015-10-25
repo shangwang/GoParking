@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,11 +11,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZV-Ye-hIz">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZV-Ye-hIz">
                         <rect key="frame" x="77" y="8" width="220" height="60"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="E7l-BV-VTx"/>
+                            <constraint firstAttribute="width" constant="220" id="hwp-cP-tLN"/>
+                        </constraints>
                         <state key="normal" title="提交订单">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -24,7 +29,15 @@
                         </connections>
                     </button>
                 </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="UZV-Ye-hIz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="INP-Pg-s0V"/>
+                    <constraint firstAttribute="trailing" secondItem="UZV-Ye-hIz" secondAttribute="trailing" constant="78" id="jgQ-5x-xHb"/>
+                    <constraint firstItem="UZV-Ye-hIz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="77" id="pcv-Bh-39F"/>
+                    <constraint firstAttribute="bottom" secondItem="UZV-Ye-hIz" secondAttribute="bottom" constant="8" id="u6A-ih-67N"/>
+                </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="submitBtn" destination="UZV-Ye-hIz" id="j7r-It-b7G"/>
             </connections>

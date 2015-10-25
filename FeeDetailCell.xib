@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,35 +14,82 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="费用说明" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUo-dv-1N5">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="费用说明" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUo-dv-1N5">
                         <rect key="frame" x="22" y="16" width="68" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="68" id="gPm-sM-yA6"/>
+                            <constraint firstAttribute="height" constant="21" id="rwI-Bb-o6f"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="WWb-Ok-eqc">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="WWb-Ok-eqc">
                         <rect key="frame" x="0.0" y="25" width="375" height="27"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="Xws-1l-WDr"/>
+                            <constraint firstAttribute="width" constant="375" id="pgq-fE-K6S"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1. 预定车位将收取该停车场首小时费用。15分钟内取消订单，费用全部退回" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7P-kp-5Ak">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 预定车位将收取该停车场首小时费用。15分钟内取消订单，费用全部退回" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7P-kp-5Ak">
                         <rect key="frame" x="14" y="39" width="361" height="71"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="71" id="caa-3L-GOu"/>
+                            <constraint firstAttribute="width" constant="361" id="o05-dy-ZtX"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2. 15分钟内未到车位保留30分钟，取消则扣去50%预交费用" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ak-AF-aAY">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. 15分钟内未到车位保留30分钟，取消则扣去50%预交费用" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ak-AF-aAY">
                         <rect key="frame" x="15" y="77" width="349" height="61"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="61" id="Pvs-xy-rOP"/>
+                            <constraint firstAttribute="width" constant="349" id="ibI-M6-VLJ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3. 30分钟内未到车位不予保留，取消预约预交费用不予退回" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-eK-J2A">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. 30分钟内未到车位不予保留，取消预约预交费用不予退回" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCI-eK-J2A">
                         <rect key="frame" x="15" y="108" width="342" height="61"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="342" id="K6v-8R-0gu"/>
+                            <constraint firstAttribute="height" constant="61" id="vFr-Cw-CjE"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="NCI-eK-J2A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="9x4-1s-Bbi"/>
+                    <constraint firstItem="WWb-Ok-eqc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BN9-wh-2ye"/>
+                    <constraint firstAttribute="trailing" secondItem="oUo-dv-1N5" secondAttribute="trailing" constant="285" id="DZJ-wo-ZJN"/>
+                    <constraint firstItem="WWb-Ok-eqc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="Glb-w9-UB4"/>
+                    <constraint firstItem="oUo-dv-1N5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="OOI-X7-yfD"/>
+                    <constraint firstItem="1Ak-AF-aAY" firstAttribute="top" secondItem="WWb-Ok-eqc" secondAttribute="bottom" constant="25" id="RMx-2D-0az"/>
+                    <constraint firstItem="NCI-eK-J2A" firstAttribute="top" secondItem="WWb-Ok-eqc" secondAttribute="bottom" constant="56" id="T8H-HY-Sq2"/>
+                    <constraint firstAttribute="trailing" secondItem="WWb-Ok-eqc" secondAttribute="trailing" id="VG1-pR-51S"/>
+                    <constraint firstItem="Z7P-kp-5Ak" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="WnZ-g6-KsH"/>
+                    <constraint firstItem="1Ak-AF-aAY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Xt0-nF-sBj"/>
+                    <constraint firstAttribute="trailing" secondItem="Z7P-kp-5Ak" secondAttribute="trailing" id="fc0-f5-UO6"/>
+                    <constraint firstItem="oUo-dv-1N5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="hHG-9U-KFY"/>
+                    <constraint firstAttribute="bottom" secondItem="Z7P-kp-5Ak" secondAttribute="bottom" constant="50" id="hLY-n2-PtY"/>
+                    <constraint firstAttribute="trailing" secondItem="NCI-eK-J2A" secondAttribute="trailing" constant="18" id="lb7-Q1-oUM"/>
+                    <constraint firstAttribute="bottom" secondItem="1Ak-AF-aAY" secondAttribute="bottom" constant="22" id="m0e-Xl-d2N"/>
+                    <constraint firstAttribute="bottom" secondItem="NCI-eK-J2A" secondAttribute="bottom" constant="-9" id="vCN-y6-YUp"/>
+                    <constraint firstAttribute="trailing" secondItem="1Ak-AF-aAY" secondAttribute="trailing" constant="11" id="ykq-XO-eR1"/>
+                    <constraint firstItem="Z7P-kp-5Ak" firstAttribute="top" secondItem="oUo-dv-1N5" secondAttribute="bottom" constant="2" id="z0B-Mo-QGs"/>
+                </constraints>
             </tableViewCellContentView>
+            <animations/>
             <point key="canvasLocation" x="554.5" y="403.5"/>
         </tableViewCell>
     </objects>

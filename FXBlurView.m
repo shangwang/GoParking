@@ -318,7 +318,7 @@
 - (void)setUp
 {
     if (!_iterationsSet) _iterations = 3;
-    if (!_blurRadiusSet) [self blurLayer].blurRadius = 40;
+    if (!_blurRadiusSet) [self blurLayer].blurRadius = 30;
     if (!_dynamicSet) _dynamic = YES;
     if (!_blurEnabledSet) _blurEnabled = YES;
     self.updateInterval = _updateInterval;

@@ -23,7 +23,7 @@
 #import "TestViewController2.h"
 #import "TestViewController3.h"
 #import "OrderController.h"
-
+#import "ServiceTeamViewController.h"
 @interface MenuViewController ()
 
 @end
@@ -142,8 +142,12 @@
     else if(0==indexPath.section  && 4==indexPath.row){
         OrderController *orderView= [[OrderController alloc]init];
          [navigationController pushViewController:orderView animated:YES];
+    
+    }
+    else if(0==indexPath.section  &&5==indexPath.row){
+        ServiceTeamViewController *orderView= [[ServiceTeamViewController alloc]init];
+        [navigationController pushViewController:orderView animated:YES];
         
-
     }
     else {
         // SecondViewController *secondViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"secondController"];

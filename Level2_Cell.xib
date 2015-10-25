@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,35 +16,50 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K9n-iB-LM1">
                         <rect key="frame" x="14" y="5" width="40" height="40"/>
+                        <animations/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flywarrior" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFg-eR-6uT">
                         <rect key="frame" x="62" y="16" width="77" height="18"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="st5.png" translatesAutoresizingMaskIntoConstraints="NO" id="EPz-ic-qk7">
                         <rect key="frame" x="158" y="15" width="74" height="19"/>
+                        <animations/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcI-aw-uZJ">
-                        <rect key="frame" x="266" y="12" width="30" height="30"/>
+                        <rect key="frame" x="261" y="5" width="45" height="43"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <state key="normal" title="预约">
                             <color key="titleColor" red="0.2030067998" green="1" blue="0.2384320295" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="reserve:" destination="bXA-Yd-ChZ" eventType="touchUpInside" id="c1X-UW-ixm"/>
+                        </connections>
                     </button>
                 </subviews>
+                <animations/>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="headImg" destination="K9n-iB-LM1" id="x10-KW-ckn"/>
                 <outlet property="name" destination="gFg-eR-6uT" id="0au-WM-G4Y"/>
                 <outlet property="rsvpBtn" destination="FcI-aw-uZJ" id="uhR-VL-G1R"/>
                 <outlet property="starImg" destination="EPz-ic-qk7" id="PpG-Wv-7zG"/>
             </connections>
-            <point key="canvasLocation" x="345" y="280"/>
+            <point key="canvasLocation" x="339" y="277"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="st5.png" width="453" height="116"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

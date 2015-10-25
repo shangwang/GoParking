@@ -69,6 +69,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)sectionIndex
 {
+    if(0==sectionIndex){
+        return 20;
+    }
        return 20;
 }
 
@@ -112,7 +115,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
@@ -132,7 +135,8 @@
         cell.TypeLabel.text=@"预约洗车";
         cell.profileImg.image = [UIImage imageNamed:@"Head5"];
         cell.TypeLabel.textColor=[UIColor whiteColor];
-        cell.TypeLabel.backgroundColor=[UIColor purpleColor];
+        cell.TypeLabel.backgroundColor=[UIColor colorWithRed:102/255 green:178/255 blue:255/255 alpha:1.0];
+        cell.OrderDetailLabel.text=@"时代广场停车场(服务商:天天洗车)";
         cell.backgroundColor=[[UIColor grayColor]colorWithAlphaComponent:0.1];
         return cell;
     }
@@ -148,6 +152,12 @@
         cell.profileImg.image = [UIImage imageNamed:@"Head3"];
         return cell;
     }
+    else if (0==indexPath.row&&4==indexPath.section){
+        ToDoCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"ToDoCell" owner:self options:nil] lastObject];
+        cell.backgroundColor=[[UIColor grayColor]colorWithAlphaComponent:0.1];
+        cell.profileImg.image = [UIImage imageNamed:@"Head4"];
+        return cell;
+    }
     else{
         static NSString *cellIdentifier = @"Cell";
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -155,6 +165,8 @@
         return cell;
     }
 }
+
+
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {

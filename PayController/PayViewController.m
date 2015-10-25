@@ -13,7 +13,6 @@
 #import "DEMOAppDelegate.h"
 #import "Pingpp.h"
 #import "UIButton+Bootstrap.h"
-#import "ParkingLotInfoViewController.h"
 #define KBtn_width        200
 #define KBtn_height       40
 #define KXOffSet          (self.view.frame.size.width - KBtn_width) / 2
@@ -146,7 +145,7 @@
 }
 
 -(void)finishPayment{
-    [parentParkingInfoView showAlertMessage];
+    //[parentParkingInfoView showAlertMessage];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

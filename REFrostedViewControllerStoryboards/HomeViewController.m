@@ -89,10 +89,12 @@
     //notificationTableView.allowsMultipleSelectionDuringEditing = NO;
     notificationTableView.scrollEnabled = NO;
     notificationTableView.allowsSelection = NO;
+    
+    //[self.view sendSubviewToBack:mainView];
+    
+    
     [self addTestData];//添加演示数据
     [self reloadDataForDisplayArray];//初始化将要显示的数据
-
-    
 }
 - (IBAction)scanQR:(id)sender {
     if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
@@ -181,6 +183,9 @@
     CLTreeView_LEVEL3_Model *tmp3 =[[CLTreeView_LEVEL3_Model alloc]init];
     node3.nodeData = tmp3;
     
+
+
+    
     CLTreeViewNode *node4 = [[CLTreeViewNode alloc]init];
     node4.nodeLevel = 0;
     node4.type = 3;
@@ -245,6 +250,12 @@
         cell.parentTableView=notificationTableView;
         cell.parentHomeView=self;
 
+       /*
+        FXBlurView *blurView = [[FXBlurView alloc] initWithFrame:cell.frame];
+        [blurView setDynamic:YES];
+        [cell addSubview:blurView];
+        [cell sendSubviewToBack:blurView];
+        */
         return cell;
     
     }

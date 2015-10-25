@@ -8,8 +8,11 @@
 
 #import "ServiceViewController.h"
 #import "DoubleViewController.h"
+#import "FXBlurView.h"
 @interface ServiceViewController ()
 
+@property(strong,nonatomic) NSMutableArray* dataArray; //保存全部数据的数组
+@property(strong,nonatomic) NSArray *displayArray;   //保存要显示在界面上的数据的数组
 @end
 
 @implementation ServiceViewController
@@ -26,8 +29,28 @@
     visualEffectView.alpha=0.5;
     visualEffectView.frame=bgImg.frame;
     [bgImg addSubview:visualEffectView];
+    FXBlurView *blurView = [[FXBlurView alloc] initWithFrame:self.view.frame];
+    [blurView setDynamic:YES];
+    [self.view addSubview:blurView];
+    [self.view sendSubviewToBack:blurView];
     [self.view sendSubviewToBack:bgIMG];
+    
+    
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *backBtnImage = [UIImage imageNamed:@"back3"]  ;
+    [backBtn setBackgroundImage:backBtnImage forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(goback:) forControlEvents:UIControlEventTouchUpInside];
+    backBtn.frame = CGRectMake(-30, 0, 30, 30);
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn] ;
+    self.navigationItem.leftBarButtonItem = backButton;
 }
+
+
+
+-(void)goback:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 -(void)setserviceLable: (NSString*) lable{
     serviceLable.text=lable;
 }

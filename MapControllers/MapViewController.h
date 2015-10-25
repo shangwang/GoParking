@@ -28,4 +28,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *preViewAddress;
 @property (weak, nonatomic) IBOutlet UILabel *preViewAvailable;
 @property (weak, nonatomic) IBOutlet UILabel *preViewTotal;
+@property (weak, nonatomic) IBOutlet UIButton *locationBtn;
+@property (weak, nonatomic) IBOutlet UIButton *callBtn;
+@property (weak, nonatomic) IBOutlet UIButton *voiceSearchBtn;
+@property BOOL previewIsShow;
+@property CLLocationCoordinate2D myLocation;
 @end

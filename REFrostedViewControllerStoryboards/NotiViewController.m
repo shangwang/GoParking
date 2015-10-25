@@ -8,6 +8,7 @@
 
 #import "NotiViewController.h"
 #import "NotificationTableViewCell.h"
+#import "FXBlurView.h"
 @interface NotiViewController ()
 @property(strong,nonatomic) NSMutableArray* dataArray; //保存全部数据的数组
 @property(strong,nonatomic) NSArray *displayArray;   //保存要显示在界面上的数据的数组
@@ -24,7 +25,7 @@
     UIImage *img=[UIImage imageNamed:@"bg_blur"];
     img= [self imageWithImage:img scaledToSize:(self.view.frame.size)];
     self.view.backgroundColor=[[UIColor alloc] initWithPatternImage:img];
-    self.dataCount=5;
+    self.dataCount=9;
     
      // Do any additional setup after loading the view from its nib.
      notificationTableView.dataSource = self;
@@ -38,6 +39,18 @@
     // [notificationTableView setFrame:self.view.frame];
      [notificationTableView setFrame: CGRectMake(0, 0, self.view.frame.size.width/1.1,  self.view.frame.size.height)];
      [self addTestData];//添加演示数据
+    [notificationTableView setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height+ self.navigationController.navigationBar.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height-(self.navigationController.navigationBar.frame.size.height+ self.navigationController.navigationBar.frame.origin.y))];
+    
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    FXBlurView *blurView = [[FXBlurView alloc] initWithFrame:screenRect];
+    [blurView setDynamic:YES];
+    //blurView.alpha=0.8;
+    [self.view addSubview:blurView];
+    [self.view sendSubviewToBack:blurView];
+    
+    
     
 }
 -(UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
@@ -105,7 +118,7 @@
     if(cell == nil){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"NotificationTableViewCell" owner:self options:nil] lastObject];
     }
-    cell.backgroundColor=[[UIColor grayColor]colorWithAlphaComponent:0.1];
+    cell.backgroundColor=[UIColor clearColor];
     //[cell setFrame:self.view.frame];
     return cell;
 }

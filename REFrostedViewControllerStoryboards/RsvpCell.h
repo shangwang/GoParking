@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <BaiduMapAPI/BMapKit.h>
-@class  ParkingLotInfoViewController;
+@class  ParkingInfoController;
 @interface RsvpCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIButton *RsvpBtn;
 @property (weak, nonatomic) IBOutlet UIButton *NaviBtn;
-@property ParkingLotInfoViewController* parentParkingInfoController;
+@property ParkingInfoController* parentParkingInfoController;
 @end

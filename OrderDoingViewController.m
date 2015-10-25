@@ -121,14 +121,16 @@
         ToDoCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"ToDoCell" owner:self options:nil] lastObject];
         cell.backgroundColor=[[UIColor grayColor]colorWithAlphaComponent:0.1];
         cell.TypeLabel.textColor=[UIColor whiteColor];
-        cell.TypeLabel.backgroundColor=[UIColor blueColor];
+        cell.statusLabel.text=@"等待用户进场";
+        cell.TypeLabel.backgroundColor=[UIColor colorWithRed:102/255 green:178/255 blue:255/255 alpha:1.0];
         return cell;
     }else if (0==indexPath.row&&1==indexPath.section){
         ToDoCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"ToDoCell" owner:self options:nil] lastObject];
         cell.TypeLabel.text=@"预约洗车";
+        cell.statusLabel.text=@"等待商户服务";
         cell.profileImg.image = [UIImage imageNamed:@"Head3"];
         cell.TypeLabel.textColor=[UIColor whiteColor];
-        cell.TypeLabel.backgroundColor=[UIColor purpleColor];
+        cell.TypeLabel.backgroundColor=[UIColor colorWithRed:102/255 green:255/255 blue:178/255 alpha:1.0];
         cell.backgroundColor=[[UIColor grayColor]colorWithAlphaComponent:0.1];
         return cell;
     }

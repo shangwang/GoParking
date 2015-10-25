@@ -5,7 +5,7 @@
 //  Created by Roman Efimov on 10/9/13.
 //  Copyright (c) 2013 Roman Efimov. All rights reserved.
 //
-
+#import "TestFairy.h"
 #import "DEMOAppDelegate.h"
 #import "Pingpp.h"
 #import "LogInViewController.h"
@@ -17,7 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+ 
+    [TestFairy begin:@"e5748af60e023eec56df84a69ddfed6cd421b914"];
 
     _mapManager = [[BMKMapManager alloc]init];
     navigationController=[[UINavigationController alloc]init];

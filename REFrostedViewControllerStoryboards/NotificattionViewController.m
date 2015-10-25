@@ -18,7 +18,7 @@
 @synthesize notificationTableView;
 - (void)viewDidLoad {
     [super viewDidLoad];
-   self.dataCount=5;
+   self.dataCount=9;
     
     UIImage *img=[UIImage imageNamed:@"bg_blur"];
     img= [self imageWithImage:img scaledToSize:(self.view.frame.size)];

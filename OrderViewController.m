@@ -26,7 +26,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.view.backgroundColor=[UIColor colorWithRed:239/255.0f green:239/255.0f blue:244/255.0f alpha:1.0f];
-    
+    tableView.backgroundColor=[UIColor colorWithRed:239/255.0f green:239/255.0f blue:244/255.0f alpha:1.0f];
     
     tableView =[[UITableView alloc] initWithFrame:self.view.frame];
     tableView.dataSource = self;
@@ -106,11 +106,6 @@
         return cell.frame.size.height;
     }
     
-    if(indexPath.row==0&&3==indexPath.section){
-        RSVPBtnCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"RSVPBtnCell" owner:self options:nil] lastObject];
-        return cell.frame.size.height;
-    }
-    
     return 45;
     
 }
@@ -131,10 +126,6 @@
     else if (0==indexPath.row&&2==indexPath.section){
         OrderDetailCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"OrderDetailCell" owner:self options:nil] lastObject];
         cell.backgroundColor=[[UIColor grayColor]colorWithAlphaComponent:0.1];
-        return cell;    }
-    else if (0==indexPath.row&&3==indexPath.section){
-        RSVPBtnCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"RSVPBtnCell" owner:self options:nil] lastObject];
-        cell.backgroundColor=[[UIColor grayColor]colorWithAlphaComponent:0.1];
         return cell;
     }
     else{
@@ -147,7 +138,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex

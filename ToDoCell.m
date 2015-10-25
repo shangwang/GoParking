@@ -12,6 +12,7 @@
 @synthesize TypeLabel;
 @synthesize profileImg;
 @synthesize reviewBtn;
+@synthesize OrderDetailLabel;
 - (void)awakeFromNib {
     // Initialization code
     TypeLabel.layer.cornerRadius=TypeLabel.frame.size.height/3;

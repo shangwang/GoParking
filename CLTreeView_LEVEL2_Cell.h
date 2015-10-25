@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CLTreeViewNode.h"
-
+@class ServiceTeamViewController;
 @interface CLTreeView_LEVEL2_Cell : UITableViewCell
 
 @property (retain,strong,nonatomic) CLTreeViewNode *node;//data
@@ -17,9 +17,7 @@
 @property (strong,nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UIImageView *starImg;
 @property (weak, nonatomic) IBOutlet UIButton *rsvpBtn;
-
+@property ServiceTeamViewController* parentServiceController;
 @end
 
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com
+

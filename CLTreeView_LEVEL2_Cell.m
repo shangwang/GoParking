@@ -7,11 +7,14 @@
 //
 
 #import "CLTreeView_LEVEL2_Cell.h"
-
+#import "ServiceRSVPViewController.h"
+#import "REFrostedViewController.h"
+#import "ServiceTeamViewController.h"
 @implementation CLTreeView_LEVEL2_Cell
 @synthesize headImg;
 @synthesize rsvpBtn;
 @synthesize starImg;
+@synthesize parentServiceController;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -44,7 +47,6 @@
     signtureFrame.origin.x = 62 + addX;
     _signture.frame = signtureFrame;
     
-    
     [headImg setFrame:CGRectMake(headImg.frame.origin.x, headImg.frame.origin.y, 36, 36)];
     headImg.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     headImg.layer.masksToBounds = YES;
@@ -56,8 +58,13 @@
     headImg.clipsToBounds = YES;
 }
 
-@end
+- (IBAction)reserve:(id)sender {
+    REFrostedViewController* REFview=(REFrostedViewController*)[UIApplication sharedApplication].keyWindow.rootViewController;
+    UINavigationController* nav=(UINavigationController*)REFview.contentViewController;
 
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com
+    ServiceRSVPViewController *payView=[[ServiceRSVPViewController alloc]init];
+    [nav pushViewController:payView animated:YES];
+
+}
+
+@end

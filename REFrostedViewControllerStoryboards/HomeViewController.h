@@ -11,7 +11,7 @@
 #import "PayViewController.h"
 #import "JKPopMenuView.h"
 #import "QRCodeReaderDelegate.h"
-
+#import "FXBlurView.h"
 
 
 @interface HomeViewController : UIViewController<NSURLConnectionDataDelegate,JKPopMenuViewSelectDelegate,UITableViewDataSource,UITableViewDelegate,QRCodeReaderDelegate>
@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *notificationTableView;
 @property int dataCount;
 - (IBAction)showMenu;
+@property FXBlurView *blurEffectView;
+
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (strong, nonatomic) NSData* m_JsonData;
 - (IBAction)clickOnNavigationButton:(id)sender;
